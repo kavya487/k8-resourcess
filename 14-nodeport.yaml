@@ -18,9 +18,9 @@ apiVersion: v1
 metadata: 
   name: backend-np
   labels:
-  project: expense
-  trainer: kavya
-  work: demo
+    project: expense
+    trainer: kavya
+    work: demo
 spec:
   containers:
   - name: nginx
