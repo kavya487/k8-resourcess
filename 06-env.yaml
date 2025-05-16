@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: env
+spec:
+  - name: nginx
+    image: nginx
+    env:
+    - name: kavya
+      value: devops
+    - name: trainer
+      value: siva
