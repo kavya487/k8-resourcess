@@ -1,0 +1,27 @@
+kind: Service
+apiVersion: v1
+metadata: 
+  name: nginx-np
+spec:
+  type: NodePort
+  selector:
+    project: expense
+    trainer: kavya
+    work: demo
+  ports: 
+  - protocol: TCP
+    port: 80
+    targetport: 80
+---
+kind: Pod
+apiversion: v1
+metadata: 
+  name: backend-np
+  labels:
+  project: expense
+  trainer: kavya
+  work: demo
+spec:
+  containers:
+  - name: nginx
+    image: nginx
