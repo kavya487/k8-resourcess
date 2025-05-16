@@ -6,12 +6,13 @@ spec:
   selector:
     project: expense
     envi: dev
-    version: 1.0
+    version: "1.0"
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
 
+---
 
 kind: Pod
 apiVersion: v1
@@ -20,8 +21,8 @@ metadata:
   labels:
     project: expense
     envi: dev
-    version: v1
+    version: "1.0"
   spec:
     containers:
-      name: nginx
+    - name: nginx
       image: nginx
