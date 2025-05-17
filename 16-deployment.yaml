@@ -19,8 +19,23 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: kavya478/nginx:1.0
         ports:
         - containerPort: 80
 
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: service
+spec:
+  type: LoadBalancer
+  selector:
+    app: divya
+    tier: backend
+  ports:
+  - protocol: TCP
+    ports: 80
+    targetPort: 80
+    NodePort: 3007
   
