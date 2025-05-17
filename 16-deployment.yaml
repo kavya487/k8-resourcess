@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: kavya478/nginx:1.0
+        image: kavya478/deployment:1.0
         ports:
         - containerPort: 80
 
