@@ -12,10 +12,10 @@ spec:
       app: divya
       tier: backend
   template:
-  metadata:
-    labels:
-      app: divya
-      tier: backend
+    metadata:
+      labels:
+        app: divya
+        tier: backend
   spec:
     containers:
     - name: nginx
