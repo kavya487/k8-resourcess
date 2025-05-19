@@ -16,7 +16,7 @@ kind: Pod
 metadata:
   name: efs-dynamic
   labels:
-  purpose: efs-dynamic-demo
+    purpose: efs-dynamic-demo
 spec:
   containers:
   - name: nginx
