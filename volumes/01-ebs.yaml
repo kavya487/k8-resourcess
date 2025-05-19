@@ -8,6 +8,6 @@ spec:
   capacity:
     storage: 5Gi
   csi:
-  driver: ebs.csi.aws.com
-  fsType: ext4
-  VolumeHandle: vol-05389eb5a162ea9f5
+    driver: ebs.csi.aws.com
+    fsType: ext4
+    VolumeHandle: vol-05389eb5a162ea9f5
