@@ -1,15 +1,15 @@
-kind: PersistentVolumeClaim
 apiVersion: v1
+kind: PersistentVolumeClaim
 metadata: 
   name: ebs-static
 spec:
-  storageClassName: ""
-  volumeName: ebs-static
+  storageClassName: ""            # Static provisioning requires no storage class
+  volumeName: ebs-static          # Must match the name of your existing PersistentVolume
   accessModes:
-  - ReadWriteOnce
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 20Gi
+      storage: 20Gi               # Must be ≤ PersistentVolume capacity
 ---
 apiVersion: v1
 kind: Pod
@@ -25,4 +25,4 @@ spec:
   volumes:
   - name: persistent-storage
     persistentVolumeClaim:
-      claimName: ebs-static
+      claimName: ebs-static       # Must match the PVC name exactly
