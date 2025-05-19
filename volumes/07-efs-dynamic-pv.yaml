@@ -32,7 +32,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: efs-dynamic
+  name: nginx-1b
 spec:
   type: LoadBalancer
   selector:
