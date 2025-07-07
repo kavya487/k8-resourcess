@@ -1,41 +1,41 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: deployment
+  name: Deplo
   labels:
-    app: kavya
-    tier: frontend
+    app: frontend
+    tier: web
 spec:
-  replicas: 2
-  selector:
+  replicas: 3
+  selectors:
     matchLabels:
-      app: divya
-      tier: backend
-  template:
-    metadata:
-      labels:
-        app: divya
-        tier: backend
+      app: frontned
+      tier: web
+  template: 
+    meydata:
+    name: pod
+    labels:
+      app: frontend
+      tier: web
     spec:
-      containers:
-      - name: nginx
-        image: kavya478/deployment:1.0
-        ports:
-        - containerPort: 80
+    containers:
+    - name: nginx
+      image: nginx
+      ports:
+      - containerPorts: 80
 
 ---
 kind: Service
 apiVersion: v1
-metadata:
-  name: service
+metadata: 
+  name: service name
 spec:
   type: LoadBalancer
   selector:
-    app: divya
-    tier: backend
+     app: frontend
+     tier: web
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-    nodePort: 30007
-  
+    nodePort: 3007

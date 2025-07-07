@@ -1,9 +1,8 @@
-apiVersion: v1
 kind: Pod
-metadata: 
-  name: divya
-
-spec: 
+apiVersion: v1
+metadata:
+  name: nginx
+spec:
   containers:
-  - name: kavya
+  - name: nginx
     image: nginx
