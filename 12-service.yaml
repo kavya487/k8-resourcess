@@ -1,23 +1,24 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: service
+  name: nginx
 spec:
-  selector:
+  selectors:
     project: expense
+    environment: dev
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 2348
+    targetPort: 80
 ---
 
-kind: Pod
+kind: pod
 apiVersion: v1
 metadata: 
-  name: nginx
-  namespace: expense
+  name: backend
   labels:
     project: expense
+    environment: dev
 spec:
   containers:
   - name: nginx
