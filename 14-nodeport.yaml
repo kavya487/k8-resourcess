@@ -7,7 +7,7 @@ spec:
   selector:
     project: expense
     environemnt: dev
-    version: v1
+    version: v12
  
   ports:
   - protocol: Tcp
