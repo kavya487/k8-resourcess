@@ -6,7 +6,7 @@ spec:
   type: NodePort
   selector:
     project: expense
-    environemnt: dev
+    environment: dev
     version: v12
  
   ports:
