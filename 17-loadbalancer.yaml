@@ -10,7 +10,7 @@ spec:
 
   ports:
   - protocol: TCP
-    ports: 80
+    port: 80
     targetPort: 80
     nodePort: 30009
 
@@ -23,6 +23,6 @@ metadata:
     environment: dev
     demo: project
 spec:
-  - containers:
-    name: nginx
+  containers:
+  - name: nginx
     image: nginx
