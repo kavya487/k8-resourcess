@@ -35,6 +35,6 @@ spec:
     app: frontend
     kavya: tier
   ports:
-  - containerPort: 80
+  - protocol: TCP
     Port: 80
     targetPort: 30006
