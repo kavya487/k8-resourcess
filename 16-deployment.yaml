@@ -36,5 +36,5 @@ spec:
     kavya: tier
   ports:
   - protocol: TCP
-    Port: 80
+    port: 80
     targetPort: 30006
