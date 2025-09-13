@@ -1,0 +1,19 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx
+  labels:
+    app: nginx
+    web: frontend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kavya
+  template:
+    metadata:
+      labels:
+        app: kavya
+    containers:
+      - name: nginx
+        image: nginx
