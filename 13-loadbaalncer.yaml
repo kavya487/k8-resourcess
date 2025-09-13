@@ -10,17 +10,14 @@ spec:
   - protocol: TCP
     port: 80
     targetPort: 80
-    
-   
-
 ---
-
 kind: Pod
 apiVersion: v1
 metadata:
   name: pod-service
   labels:
     app: divya
+spec:
   containers:
   - name: nginx
     image: nginx
