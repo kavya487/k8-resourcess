@@ -1,1 +1,25 @@
-ki
+kind: Service
+apiVersion:  v1
+metadata:
+  name: nginx-service
+spec:
+  selector:
+    app: kavya
+    web: frontnend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+---
+
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: pod-service
+  labels:
+    app: kavya
+    web: tier
+spec:
+  containers:
+  - name: nginx
+    image: nginx

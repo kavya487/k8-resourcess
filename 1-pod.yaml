@@ -3,8 +3,8 @@ apiVersion: v1
 metadata:
   name: pod-yaml
   labels:
-    app: nginx
-    web: frontnedn
+    app: kavya
+    web: frontend
 spec:
   containers:
   - name: nginx
