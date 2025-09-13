@@ -1,0 +1,24 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: kavya
+spec:
+  selector:
+    app:   frotnend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
+
+
+---
+kind: pod
+apiVersion: v1
+metadata:
+  name: pod-service
+  labels:
+    app: frontend
+spec:
+  containers:
+  - name: nginx
+    image: nginx

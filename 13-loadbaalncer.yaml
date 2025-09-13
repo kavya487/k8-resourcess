@@ -1,0 +1,28 @@
+kind: service
+apiVersion: v1
+metadata: 
+  name: service-lb
+spec:
+  type: Loadbalancer
+  selector:
+    app: frontnend
+    tier: web
+  ports:
+  - protocol: TCp
+    port: 80
+    targetPort: 8080
+
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-lb
+  labels:
+    app: frontnend
+    tier: web
+spec: 
+  containers:
+  - name: nginx
+    inage: nginx

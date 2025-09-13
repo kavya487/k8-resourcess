@@ -1,21 +1,21 @@
 kind: Service
 apiVersion: v1
-metadata:
-  name: nginx
+metadata: 
+  name: service-file
 spec:
   selector:
     project: expense
     environment: dev
   ports:
-  - protocol: TCP
+  - protocol: tcp
     port: 80
-    targetPort: 80
+    targetPort: 3030
 ---
 
 kind: Pod
 apiVersion: v1
-metadata: 
-  name: backend
+metadata:
+  name: pod-file
   labels:
     project: expense
     environment: dev
