@@ -2,7 +2,6 @@ kind: service
 apiVersion: v1
 metadata: 
   name: node-port
- 
 spec:
   type: NodePort
   selector:
@@ -10,7 +9,8 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
+    
    
 
 ---
