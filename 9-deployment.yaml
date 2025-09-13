@@ -14,6 +14,7 @@ spec:
     metadata:
       labels:
         app: kavya
-    containers:
+    spec:
+      containers:
       - name: nginx
         image: nginx
