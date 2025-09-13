@@ -11,5 +11,5 @@ spec:
   - name: kavya-image
     image: nginx
     name: alpine-latest
-    image: alpine:latest
-    command: ["sleep",  "3600"]
+    image: almalinux:9
+    command: ["sleep", "1000"]
