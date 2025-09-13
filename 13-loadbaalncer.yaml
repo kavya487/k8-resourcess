@@ -1,28 +1,26 @@
 kind: service
 apiVersion: v1
 metadata: 
-  name: service-lb
+  name: node-port
+ 
 spec:
-  type: Loadbalancer
+  type: NodePort
   selector:
-    app: frontnend
-    tier: web
+   app: divya
   ports:
-  - protocol: TCp
+  - protocol: TCP
     port: 80
     targetPort: 8080
-
+   
 
 ---
 
 kind: Pod
 apiVersion: v1
 metadata:
-  name: pod-lb
+  name: pod-service
   labels:
-    app: frontnend
-    tier: web
-spec: 
-  containers:
+    app: divya
+  contaimers:
   - name: nginx
-    inage: nginx
+    image: nginx
