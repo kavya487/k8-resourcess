@@ -1,0 +1,14 @@
+kind: Pod
+apiVersion: v1
+metadata: 
+  name: multicontainer
+  labels:
+    app: kavya
+    web: frontend
+spec:
+  containers:
+  - name: kavya-image
+    image: nginx
+    name: alpine-latest
+    image: alpine-latest
+    command: ["sleep",  "3600"]
