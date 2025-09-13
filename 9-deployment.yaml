@@ -17,4 +17,20 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx
+        image: kavya478/deployment:1.0.0.0
+
+---
+
+kind: service
+apiVersion: v1
+metadata:
+  name: service-nginx
+spec:
+  type: LoadBalancer
+  selector:
+    app: kavya
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  
