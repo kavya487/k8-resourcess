@@ -8,7 +8,7 @@ spec:
     app: lb
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 80
 ---
 
@@ -22,4 +22,3 @@ spec:
   containers:
   - name: nginx
     image: nginx
-    
