@@ -21,6 +21,6 @@ metadata:
   name: pod-service
   labels:
     app: divya
-  contaimers:
+  containers:
   - name: nginx
     image: nginx
