@@ -10,12 +10,12 @@ spec:
   selector:
     matchLabels:
       app: nginx
-      web: frontnend
+      web: frontend
   template:
     metadata:
       labels:
         app: nginx
-        web: frontnend
+        web: frontend
     spec:
       containers:
       - name: nginx
@@ -23,7 +23,7 @@ spec:
 
 ---
 
-kind: service
+kind: Service
 apiVersion: v1
 metadata:
   name: service-nginx
@@ -31,9 +31,8 @@ spec:
   type: LoadBalancer
   selector:
     app: nginx
-    web: frontnend
+    web: frontend
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-
