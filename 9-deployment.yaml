@@ -22,17 +22,16 @@ spec:
         image: kavya478/deployment:1.0.0.0
 
 ---
-
 kind: Service
 apiVersion: v1
 metadata:
   name: service-nginx
 spec:
-  type: LoadBalancer
-  selector:
+  type: LoadBalancer   # Exposes service externally via cloud provider LB
+  selector:            # Matches Pods with these labels
     app: nginx
     web: frontend
   ports:
   - protocol: TCP
-    port: 80
-    targetPort: 80
+    port: 80           # Service port (client connects here)
+    targetPort: 80     # Container port in Pod
