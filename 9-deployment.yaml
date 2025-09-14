@@ -9,11 +9,13 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: kavya
+      app: nginx
+      web: frontnend
   template:
     metadata:
       labels:
-        app: kavya
+        app: nginx
+        web: frontnend
     spec:
       containers:
       - name: nginx
@@ -28,9 +30,10 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: kavya
+    app: nginx
+    web: frontnend
   ports:
   - protocol: TCP
     port: 80
     targetPort: 80
-  
+
