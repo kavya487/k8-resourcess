@@ -1,20 +1,24 @@
-kind: ReplicaSet
-apiVersion: apps/v1
-metadata:
-  name: replicaset
+kind: Replicaset
+apiVersion: v1
+metadata: 
+  name: replica
   labels:
-    app: rep
-    tier: web
+    app: nginx
+    web: tier
+    stats: div
 spec:
-  replicas: 4
+  repliacs: 3
   selector:
     matchLabels:
-      app: rep
+      app: nginx
+      web: tier
+      stats: div
   template:
     metadata:
       labels:
-        app: rep
-    spec:
-      containers:
-      - name: nginx
-        image: nginx
+        app: nginx
+        web: tier
+        stats: div
+    containers:
+    - name: nginx
+      app: nginx:stable-perl
