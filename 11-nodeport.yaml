@@ -9,7 +9,7 @@ spec:
     duration: ten
   ports:
   - protocol: TCP
-    ports: 80
+    port: 80
     targetPort: 8080
     nodePort: 3007
 
