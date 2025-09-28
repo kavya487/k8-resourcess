@@ -14,11 +14,13 @@ spec:
       web: tier
       stats: div
   template:
+
     metadata:
       labels:
         app: nginx
         web: tier
         stats: div
+    spec:
     containers:
     - name: nginx
       app: nginx:stable-perl
