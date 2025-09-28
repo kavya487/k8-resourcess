@@ -11,11 +11,11 @@ spec:
   - protocol: TCP
     ports: 80
     targtePort: 8080
-    nodePort: 8081
+    nodePort: 3007
 
 ---
 
-kind: pod
+kind: Pod
 apiVersion: v1
 metadata: 
   name: podnginx
