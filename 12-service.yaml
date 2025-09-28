@@ -2,12 +2,11 @@ kind: Service
 apiVersion: v1
 metadata:
   name: servicew.yaml
-  
 spec:
   selector:
     app: frontend
     tier: web
-    ports:
+  ports:
     - protocol: TCP
       port: 80
       targetPort: 8080
