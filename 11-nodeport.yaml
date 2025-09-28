@@ -23,6 +23,6 @@ metadata:
     app: nginx
     duration: ten
 spec:
-  - containers:
-    name: nginx
-    image: nginx
+  containers:
+  -  name: nginx
+     image: nginx
