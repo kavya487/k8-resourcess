@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: servicew.yaml
+  name: servicewyaml
 spec:
   selector:
     app: frontend
