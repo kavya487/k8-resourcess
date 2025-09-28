@@ -20,5 +20,6 @@ metadata:
     app: frontend
     tier: web
 spec:
+  containers:
   - name: nginx
     image: nginx
