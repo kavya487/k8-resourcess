@@ -1,12 +1,13 @@
 kind: Pod
 apiVersion: v1
 metadata:
-  name: pod-yaml
+  name: expense
   labels:
-    app: kavya
+    app: nginx
     web: frontend
 spec:
   containers:
   - name: nginx
-    image: alpine:latest
-    command: ["sleep", "3600"]
+    image: nginx
+  - name: almalinux
+    image: almalinux

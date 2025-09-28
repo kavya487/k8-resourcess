@@ -1,0 +1,50 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: nginx-statefulset
+  labels:
+    app: nginx
+    web: frontend
+spec:
+  serviceName: "nginx-headless"
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+      web: frontend
+  template:
+    metadata:
+      labels:
+        app: nginx
+        web: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 80
+        volumeMounts:               # ✅ fixed indentation
+        - name: www
+          mountPath: /usr/share/nginx/html
+  volumeClaimTemplates:
+  - metadata:
+      name: www
+    spec:
+      accessModes: ["ReadWriteOnce"]
+      storageClassName: "ebs-sc"
+      resources:
+        requests:
+          storage: 1Gi
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-headless
+spec:
+  clusterIP: None
+  selector:
+    app: nginx
+    web: frontend
+  ports:
+  - protocol: TCP
+    port: 80
