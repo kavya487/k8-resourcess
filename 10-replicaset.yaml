@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        app: nginx:stable-perl
+        app: nginx
