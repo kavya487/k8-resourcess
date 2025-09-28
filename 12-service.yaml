@@ -10,9 +10,7 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-    - protocol: UDP
-      port: 3078
-      targetPort: 3045
+    
 ---
 kind: Pod
 apiVersion: v1
