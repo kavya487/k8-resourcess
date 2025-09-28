@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: serviceyaml
 spec:
-  type: nodePort
+  type: NodePort
   selector: 
     app: nginx
     duration: ten
