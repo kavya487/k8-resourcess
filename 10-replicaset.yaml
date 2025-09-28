@@ -22,4 +22,4 @@ spec:
     spec:
       containers:
       - name: nginx
-        imaage: nginx
+        image: nginx
