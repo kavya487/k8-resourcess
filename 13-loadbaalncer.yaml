@@ -1,22 +1,25 @@
 kind: Service
 apiVersion: v1
-metadata: 
-  name: node-port
+metadata:
+  name: kavyua
+  
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
-   app: div
+    app: kavya
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 80
+    port: 80
+    targetPort: 8080
+    nodePort: 32765
 ---
+
 kind: Pod
 apiVersion: v1
 metadata:
-  name: pod-service
+  name: podnginx
   labels:
-    app: divya
+    app: kavya
 spec:
   containers:
   - name: nginx
