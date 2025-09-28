@@ -15,7 +15,7 @@ spec:
 kind: Pod
 apiVersion: v1
 metadata: 
-  name: Podyaml
+  name: podyaml
   labels:
     app: frontend
     tier: web
