@@ -1,24 +1,28 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: loadbalancer
+  name: serviceyaml
 spec:
-  type: LoadBalancer
-  selector:
-    app: l
+  type: nodePort
+  selector: 
+    app: nginx
+    duration: ten
   ports:
   - protocol: TCP
-    port: 8080
-    targetPort: 80
+    ports: 80
+    targtePort: 8080
+    nodePort: 8081
+
 ---
 
-kind: Pod
+kind: pod
 apiVersion: v1
-metadata:
-  name: pod-lb
+metadata: 
+  name: podnginx
   labels:
-    app: lb
+    app: nginx
+    duration: ten
 spec:
-  containers:
-  - name: nginx
+  - containers:
+    name: nginx
     image: nginx
