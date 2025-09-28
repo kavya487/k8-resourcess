@@ -1,37 +1,38 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nginx
+  name: deploy
   labels:
-    app: nginx
-    web: frontend
+    app: web
+    tier: backend
 spec:
-  replicas: 3
   selector:
     matchLabels:
-      app: nginx
-      web: frontend
+      app: web
+      tier: backend
   template:
     metadata:
       labels:
-        app: nginx
-        web: frontend
+        app: web
+        tier: backend
     spec:
-      containers:
-      - name: nginx
-        image: kavya478/deployment:1.0.0.1
+    - containers:
+      name: nginx
+      image: nginx
 
 ---
+
 kind: Service
 apiVersion: v1
 metadata:
-  name: service-nginx
+  name: servicesas
 spec:
-  type: LoadBalancer   # Exposes service externally via cloud provider LB
-  selector:            # Matches Pods with these labels
-    app: nginx
-    web: frontend
+  type: LoadBalancer
+  selector:
+    app: web
+    tier: backend
   ports:
   - protocol: TCP
-    port: 80           # Service port (client connects here)
-    targetPort: 80     # Container port in Pod
+    port: 80
+    targetPort: 8080
+    nodePort: 30001
