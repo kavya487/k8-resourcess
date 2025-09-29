@@ -28,3 +28,18 @@ spec:
   - name: pc-storage
     persistentVolumeClaim:
       claimName: ebs-dynamic
+---
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: service
+spec:
+  type: LoadBalancer
+  selector:
+    app: webtend
+  ports:
+  - protcol: tcp
+    port: 80
+    containerPort: 8080
+    targetPort: 30004
