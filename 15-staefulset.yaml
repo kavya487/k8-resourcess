@@ -20,7 +20,7 @@ metadata:
   name: nginx-statefulset
 spec:
   serviceName: "nginx-headless"
-  replicas: 3
+  replicas: 7
   selector:
     matchLabels:
       app: nginx
@@ -35,6 +35,13 @@ spec:
       containers:
       - name: nginx
         image: nginx
+        resources:
+          requests:
+            memory: "68Mi"
+            cpu: "100M"
+          limits:
+            memory: "128Mi"
+            cpu: "150M"
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -49,6 +56,5 @@ spec:
       resources:
         requests:
           storage: 10Gi
-
 
 
