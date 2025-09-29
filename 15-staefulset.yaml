@@ -19,7 +19,7 @@ apiVersion: apps/v1
 metadata:
   name: nginx-statefulset
 spec:
-  service-name: "nginx-headless"
+  serviceName: "nginx-headless"
   replicas: 3
   selector:
     matchLabels:
@@ -37,9 +37,9 @@ spec:
         image: nginx
         ports:
         - containerPort: 8080
-      volumeMounts:
-        name: www
-        mountPath: /usr/share/nginx/html
+        volumeMounts:
+          name: www
+          mountPath: /usr/share/nginx/html
   volumeclaimTemplate:
   - metadata:
     name: www
