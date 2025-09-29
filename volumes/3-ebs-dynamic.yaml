@@ -39,7 +39,7 @@ spec:
   selector:
     app: webtend
   ports:
-  - protcol: TCP
+  - protocol: tcp
     port: 80
     targetPort: 8080
     nodePort: 30004
