@@ -5,7 +5,7 @@ metadata:
 spec:
   storageClassName: ""
   volumeName: ebs-static
-  acessModes:
+  accessModes:
     - ReadWriteOnce
   resources:
     requests:
