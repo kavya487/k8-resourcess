@@ -19,7 +19,7 @@ apiVersion: apps/v1
 metadata:
   name: nginx-statefulset
 spec:
-  service-name: ebs-sc
+  service-name: "nginx-headless"
   replicas: 3
   selector:
     matchLabels:
