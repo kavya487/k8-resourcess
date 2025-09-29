@@ -3,7 +3,7 @@ apiVersion: v1
 metadata:
   name: nginx-headless
 spec:
-  ClusterIp: None
+  clusterIp: None
   selector:
     app: nginx
     web: frontend
