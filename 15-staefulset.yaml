@@ -38,11 +38,11 @@ spec:
         ports:
         - containerPort: 8080
         volumeMounts:
-          name: www
+        - name: www
           mountPath: /usr/share/nginx/html
-  volumeclaimTemplate:
+  volumeClaimTemplate:
   - metadata:
-    name: www
+      name: www
     spec:
       storageClassName: ebs-dynamic
       accessModes: [ "ReadWriteOnce" ]
