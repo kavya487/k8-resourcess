@@ -21,9 +21,9 @@ spec:
   containers:
   - name: nginx
     image: nginx
-  volumeMounts:
-  - name: pc-storage
-    mountPath: /usr/share/nginx/html
+    volumeMounts:
+    - name: pc-storage
+      mountPath: /usr/share/nginx/html
   volumes:
   - name: pc-storage
     persistentVolumeClaim:
