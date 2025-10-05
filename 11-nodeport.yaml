@@ -20,7 +20,7 @@ spec:
         web: frontend
     spec:
       containers:
-      - name: nginx
+      - name: nginxs
         image: nginx
         ports:
         - containerPort: 80
