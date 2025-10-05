@@ -5,3 +5,17 @@ metadata:
 data:
   user: kavya
   details: web
+
+---
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod-config
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  envFrom:
+    configMapRef:
+      - name: config
