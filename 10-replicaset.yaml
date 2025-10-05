@@ -1,25 +1,25 @@
 kind: ReplicaSet
 apiVersion: apps/v1
-metadata: 
-  name: replica
+metadata:
+  name: replicas
   labels:
-    app: nginx
-    web: tier
-    stats: div
+    app: database
+    web: frontnend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
-      web: tier
-      stats: div
+      app: database
+      web: frontnend
+      
   template:
     metadata:
       labels:
-        app: nginx
-        web: tier
-        stats: div
+        app: database
+        web: frontend
     spec:
       containers:
       - name: nginx
         image: nginx
+        ports:
+        - containerPort: 80
