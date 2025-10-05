@@ -24,6 +24,7 @@ spec:
         image: nginxss
         ports:
         - containerPort: 80
+        command: ["sh", "-c", "sleep 1 && false"]
 
 ---
 
